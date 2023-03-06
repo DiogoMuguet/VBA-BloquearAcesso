@@ -1,0 +1,1 @@
+Script usado para gerar os comandos em SQL que alteram a coluna "CD_SITUACAO_PESSOA" na base de dados, bloqueando o acesso dos usuários listados na planilha.

@@ -1,0 +1,43 @@
+Function bloquearAcesso()
+
+    Dim nomearq, caminho, cabeca1, resultado1, mat As String
+    Dim a As Integer
+    
+    nomearq = "bloquearAcesso.txt"
+    caminho = "P:\Catraca Livre\MAT I ao 4º ano - ACESSO BLOQUEADO\"
+    a = FreeFile
+    
+    'cabeçalho das instruções
+    cabeca1 = "UPDATE dbo.PESSOA SET CD_SITUACAO_PESSOA = 12 WHERE NU_MATRICULA = "
+    
+    'inicialização das variáveis
+    resultado1 = ""
+    
+    For rep = 1 To 445
+        
+        mat = Range("A" & rep).Value
+        
+        If (mat <> "") Then 'se a célula não está vazia
+        
+            'se a variável está vazia, apenas inserimos o resultado, caso já tenha sido preenchida, adicionamos um ponto e vírgula e pulamos a linha
+            If (resultado1 <> "") Then
+                resultado1 = resultado1 & ";" & vbCr & cabeca1 & mat
+            Else
+                resultado1 = cabeca1 & mat
+            End If
+          
+        End If
+        
+    Next rep
+    
+    'adicionamos ponto e vírgula ao final de cada instrução
+    resultado1 = resultado1 & ";"
+    
+    'escrevemos os resultados no arquivo de texto
+    Open caminho & nomearq For Output As #a
+        Print #a, resultado1
+    Close #a
+        
+End Function
+
+

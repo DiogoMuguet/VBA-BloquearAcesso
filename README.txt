@@ -1,1 +1,1 @@
-Script usado para gerar os comandos em SQL que alteram a coluna "CD_SITUACAO_PESSOA" na base de dados, bloqueando o acesso dos usuários listados na planilha.
+Script usado para gerar os comandos em SQL que alteram a coluna "CD_SITUACAO_PESSOA" na base de dados, bloqueando o acesso dos usuários listados na planilha. O script lê as matrículas listadas e gera as instruções, salvando-as num arquivo 'txt' na pasta indicada pela variável 'caminho'.
